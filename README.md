@@ -25,7 +25,7 @@ The Tax Clearance Portal is a web application designed to streamline the process
 ## How to Use
 
 1. Clone the repository to your local machine.
-   git clone https://github.com/your-username/Tax-Clearence-Portal.git
+   git clone https://github.com/rushinga/Tax-Clearence-Portal.git
 2. Navigate to the project directory and open `index.html` in your browser to explore the front-end pages.
 
 ## Note
