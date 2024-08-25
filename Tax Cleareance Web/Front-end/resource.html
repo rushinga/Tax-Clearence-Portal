@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources - Rwanda Tax Clearance Portal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      /* Reset and General Styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #004b8d 0%, #ff6f61 100%);
+        color: #333;
+        padding-top: 60px; /* Account for fixed navbar */
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: #004b8d;
+        color: #ffffff;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links {
+        list-style-type: none;
+        display: inline-block;
+        padding: 0;
+      }
+
+      .nav-links li {
+        display: inline-block;
+        margin: 0 20px;
+      }
+
+      .nav-links a {
+        color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #ff6f61;
+      }
+
+      /* Main Content */
+      .main-content {
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .main-content h1 {
+        font-size: 2.5rem;
+        color: #004b8d;
+        margin-bottom: 20px;
+      }
+
+      .resources-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .resource {
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 300px;
+        text-align: left;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .resource h2 {
+        font-size: 1.5rem;
+        color: #004b8d;
+        margin-bottom: 10px;
+      }
+
+      .resource p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .download-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ff6f61;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .download-link:hover {
+        background-color: #ffa381;
+        transform: translateY(-2px);
+      }
+
+      .resource:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer */
+      footer {
+        background-color: #004b8d;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 14px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-section {
+        flex: 1 1 300px;
+        margin-bottom: 20px;
+      }
+
+      .footer-section h3 {
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .footer-section p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .footer-section ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+        color: #fff;
+      }
+
+      .footer-section.social {
+        text-align: center;
+      }
+
+      .footer-section.social a {
+        color: #ccc;
+        font-size: 20px;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+
+      .footer-section.social a:hover {
+        color: #fff;
+      }
+
+      .footer-bottom {
+        margin-top: 20px;
+      }
+
+      .footer-bottom p {
+        font-size: 12px;
+        color: #999;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav-links li {
+          margin: 10px 0;
+        }
+
+        .main-content h1 {
+          font-size: 2rem;
+        }
+
+        .resources-section {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .resource {
+          max-width: 90%;
+          margin: 10px 0;
+        }
+      }
+      .copy {
+        background: rgba(0, 8, 23, 0.863);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="taxstatus.html">Check Tax Status</a></li> -->
+            <li><a href="tccapplication.html">Apply for TCC</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="payment.html">Make a Payment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="main-content">
+      <h1>Resources</h1>
+      <section class="resources-section">
+        <div class="resource">
+          <h2>Tax Forms</h2>
+          <p>
+            Download the latest tax forms and guidelines to ensure you are
+            compliant with Rwanda's tax laws.
+          </p>
+          <a href="tax_forms.zip" class="download-link" download
+            >Download Forms</a
+          >
+        </div>
+
+        <div class="resource">
+          <h2>Tax Guidelines</h2>
+          <p>
+            Access comprehensive guidelines on tax procedures and regulations in
+            Rwanda.
+          </p>
+          <a href="tax_guidelines.pdf" class="download-link" download
+            >Download Guidelines</a
+          >
+        </div>
+
+        <div class="resource">
+          <h2>Frequently Asked Questions</h2>
+          <p>
+            Find answers to common questions regarding tax processes and
+            requirements.
+          </p>
+          <a href="faq.pdf" class="download-link" download>Download FAQ</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="copy">
+      <div class="footer-bottom">
+        <h4>&copy; 2024 Rwanda Tax Clearance Portal. All rights reserved.</h4>
+      </div>
+    </footer>
+  </body>
+</html>

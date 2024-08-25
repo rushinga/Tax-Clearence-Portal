@@ -1,0 +1,410 @@
+/* Reset and General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif; /* Updated font for a modern look */
+    line-height: 1.6;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #004b8d;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    display: inline-block;
+    margin: 0 20px; /* Adjust margin between menu items */
+  }
+  
+  .nav-links a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #ff6f61; /* Vibrant hover color */
+  }
+  
+  
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #004b8d 0%, #ff6f61 100%); /* Gradient for modern look */
+    color: #fff;
+    padding: 100px 0; /* Adjusted padding for larger section */
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 15px 30px; /* Increased padding for a more substantial button */
+    background-color: #ff6f61;
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ffa381; /* Lighter shade for hover */
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    background-color: #004b8d; /* Updated background color */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  }
+  
+  .search-bar input[type="text"],
+  .search-bar button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .search-bar input[type="text"] {
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .search-bar button {
+    border: none;
+    background-color: #ff6f61; /* Updated background color */
+    color: #ffffff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .search-bar button:hover {
+    background-color: #ffa381;
+  }
+  
+  /* Container Styling */
+  .info-sections {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+    width: 80%; /* Set width to 80% */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Service Section */
+  .services {
+    flex: 1;
+    padding: 30px; /* Increased padding for a spacious look */
+    border-radius: 12px; /* Rounded corners for modern look */
+    box-shadow: 0 6px 12px rgba(37, 37, 37, 0.1); /* Larger shadow for depth */
+    background: linear-gradient(180deg,#b91202af 0%, #004b8d 100%) ;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 80%; /* Set width to 80% */
+    margin: 20px auto; /* Center the element horizontally */
+  }
+  
+ 
+  
+  /* Heading Styling */
+  .services h2 {
+    font-size: 2.2rem; /* Slightly larger font size */
+    color: #004b8d;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #004b8d; /* Thicker border for emphasis */
+  }
+  
+  /* Service Item Styling */
+  .services .service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    background-color: #ffffff; /* White background for contrast */
+  }
+  
+  .services .service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #e6f7ff; /* Light blue on hover */
+  }
+  
+  .services .service img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .services .service h3 {
+    font-size: 1.5rem;
+    color: #004b8d;
+    margin-bottom: 10px;
+  }
+  
+  .services .service p {
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+  }
+  
+  /* Language Selection and Accessibility */
+  .language-accessibility {
+    background: #abcde890;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .language-accessibility select {
+    padding: 10px;
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  
+  .language-accessibility .accessibility button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff6f61;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .language-accessibility .accessibility button:hover {
+    background-color: #ffa381;
+  }
+  
+  /* Testimonials */
+  .testimonials {
+    background: linear-gradient(180deg,#b91202af 0%, #004b8d 100%) ;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  }
+  
+  .testimonial {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff; /* White background for contrast */
+  }
+  
+  .testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .testimonial blockquote {
+    margin-bottom: 10px;
+  }
+  
+  .testimonial blockquote p {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial footer {
+    font-weight: bold;
+    color: #e9f1f8;
+  }
+  
+  .testimonial .testimonial-date {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  footer {
+    background-color:  #004b8d;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1 1 300px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.footer-section.social {
+    text-align: center;
+}
+
+.footer-section.social a {
+    color: #ccc;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-section.social a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #999;
+}
+.copy{
+    background: rgba(0, 8, 23, 0.863);
+}
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-section.social {
+        margin-top: 20px;
+    }
+}
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .cta-button {
+      font-size: 0.9rem;
+    }
+  
+    .search-bar input[type="text"] {
+      width: 100%;
+      border-radius: 5px;
+    }
+  
+    .info-section {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .services .service,
+    .testimonials .testimonial {
+      width: 100%;
+    }
+  }
+  

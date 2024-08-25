@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make a Payment - Rwanda Tax Clearance Portal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      /* Navbar */
+      .navbar {
+        background-color: #004b8d;
+        color: #ffffff;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      }
+
+      .nav-links {
+        list-style-type: none;
+        display: inline-block;
+        padding: 0;
+      }
+
+      .nav-links li {
+        display: inline-block;
+        margin: 0 20px; /* Adjust margin between menu items */
+      }
+
+      .nav-links a {
+        color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #ff6f61; /* Vibrant hover color */
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        background: #004b8d;
+        padding: 10px 0;
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* Main Content Styles */
+      .main-content {
+        padding: 40px 20px;
+        text-align: center;
+        background: #f5f5f5;
+      }
+
+      .form-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 40px;
+        background: linear-gradient(135deg, #004b8d 0%, #ff6f61 100%);
+        color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .form-container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(37, 37, 37, 0.1);
+        width: 100%;
+        text-align: left;
+      }
+
+      .form-container h1 {
+        font-size: 2.5rem;
+        color: #004b8d;
+        margin-bottom: 20px;
+      }
+
+      .form-container p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: #666;
+      }
+
+      .form-container label {
+        display: block;
+        margin: 10px 0 5px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .form-container input,
+      .form-container select {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .form-container button {
+        padding: 15px 30px;
+        background-color: #ff6f61;
+        color: #ffffff;
+        font-size: 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .form-container button:hover {
+        background-color: #ffa381;
+      }
+
+      .payment-info {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(37, 37, 37, 0.1);
+        text-align: left;
+        width: 100%;
+      }
+
+      .payment-info h2 {
+        font-size: 2rem;
+        color: #004b8d;
+        margin-bottom: 15px;
+      }
+
+      .payment-info p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #666;
+      }
+
+      .payment-info ul {
+        margin-top: 10px;
+      }
+
+      .payment-info ul li {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+
+      .payment-info ul li strong {
+        color: #004b8d;
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: #004b8d;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 14px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-section {
+        flex: 1 1 300px;
+        margin-bottom: 20px;
+      }
+
+      .footer-section h3 {
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .footer-section p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .footer-section ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+        color: #fff;
+      }
+
+      .footer-section.social {
+        text-align: center;
+      }
+
+      .footer-section.social a {
+        color: #ccc;
+        font-size: 20px;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+
+      .footer-section.social a:hover {
+        color: #fff;
+      }
+
+      .footer-bottom {
+        margin-top: 20px;
+      }
+
+      .footer-bottom p {
+        font-size: 12px;
+        color: #999;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .navbar ul {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .navbar ul li {
+          margin: 10px 0;
+        }
+
+        .form-section {
+          padding: 20px;
+        }
+
+        .form-container,
+        .payment-info {
+          width: 100%;
+          padding: 20px;
+        }
+
+        .form-container h1,
+        .payment-info h2 {
+          font-size: 2rem;
+        }
+      }
+      .copy {
+        background: rgba(0, 8, 23, 0.863);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="taxstatus.html">Check Tax Status</a></li> -->
+            <li><a href="tccapplication.html">Apply for TCC</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="payment.html">Make a Payment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="main-content">
+      <section class="form-section">
+        <div class="form-container">
+          <h1>Make a Payment</h1>
+          <p>
+            Use the form below to make a secure payment towards your tax
+            liabilities. Please ensure that all details are accurate before
+            submitting.
+          </p>
+
+          <form id="payment-form" method="post">
+            <label for="tin">Tax Identification Number (TIN):</label>
+            <input type="text" id="tin" name="tin" required />
+
+            <label for="amount">Payment Amount:</label>
+            <input type="number" id="amount" name="amount" required />
+
+            <label for="method">Payment Method:</label>
+            <select
+              id="method"
+              name="method"
+              required
+              onchange="showPaymentFields()"
+            >
+              <option value="">Select Payment Method</option>
+              <option value="bank">Bank Transfer</option>
+              <option value="mobile">Mobile Money</option>
+              <option value="credit_card">Credit Card</option>
+            </select>
+
+            <div id="bank-details" style="display: none">
+              <label for="bank_account">Bank Account Number:</label>
+              <input type="text" id="bank_account" name="bank_account" />
+            </div>
+
+            <div id="mobile-details" style="display: none">
+              <label for="phone_number">Phone Number:</label>
+              <input type="text" id="phone_number" name="phone_number" />
+            </div>
+
+            <div id="credit-card-details" style="display: none">
+              <label for="credit_card_number">Credit Card Number:</label>
+              <input
+                type="text"
+                id="credit_card_number"
+                name="credit_card_number"
+              />
+            </div>
+
+            <button type="submit">Submit Payment</button>
+          </form>
+
+          <p id="form-response" style="display: none"></p>
+        </div>
+
+        <script>
+          function showPaymentFields() {
+            const method = document.getElementById("method").value;
+            document.getElementById("bank-details").style.display =
+              method === "bank" ? "block" : "none";
+            document.getElementById("mobile-details").style.display =
+              method === "mobile" ? "block" : "none";
+            document.getElementById("credit-card-details").style.display =
+              method === "credit_card" ? "block" : "none";
+          }
+
+          document
+            .getElementById("payment-form")
+            .addEventListener("submit", function (event) {
+              event.preventDefault(); // Prevent default form submission
+
+              const form = event.target;
+              const formData = new FormData(form);
+              const formResponse = document.getElementById("form-response");
+
+              fetch("https://formspree.io/f/mwpevzob", {
+                method: "POST",
+                body: formData,
+                headers: {
+                  Accept: "application/json",
+                },
+              })
+                .then((response) => {
+                  if (response.ok) {
+                    formResponse.textContent =
+                      "Thank you for your payment. We will process it soon.";
+                    formResponse.style.display = "block";
+                    form.reset(); // Reset the form
+                  } else {
+                    formResponse.textContent =
+                      "Oops! There was a problem submitting your form.";
+                    formResponse.style.display = "block";
+                  }
+                })
+                .catch((error) => {
+                  formResponse.textContent =
+                    "Oops! There was a problem submitting your form.";
+                  formResponse.style.display = "block";
+                });
+            });
+        </script>
+
+        <aside class="payment-info">
+          <h2>Payment Instructions</h2>
+          <p>
+            Please follow the instructions below for the payment method you
+            choose:
+          </p>
+          <ul>
+            <li>
+              <strong>Bank Transfer:</strong>
+              <p>
+                Transfer the amount to our official bank account and use your
+                TIN as the reference.
+              </p>
+            </li>
+            <li>
+              <strong>Mobile Money:</strong>
+              <p>
+                Send the amount to our mobile money account and include your TIN
+                in the notes section.
+              </p>
+            </li>
+            <li>
+              <strong>Credit Card:</strong>
+              <p>
+                Enter your card details securely on the next page to complete
+                the payment.
+              </p>
+            </li>
+          </ul>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="copy">
+      <div class="footer-bottom">
+        <h4>&copy; 2024 Rwanda Tax Clearance Portal. All rights reserved.</h4>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Tax Status - Rwanda Tax Clearance Portal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      /* Global Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+
+      .container {
+        width: 80%;
+        margin: auto;
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: #004b8d;
+        color: #ffffff;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      }
+
+      .nav-links {
+        list-style-type: none;
+        display: inline-block;
+        padding: 0;
+      }
+
+      .nav-links li {
+        display: inline-block;
+        margin: 0 20px; /* Adjust margin between menu items */
+      }
+
+      .nav-links a {
+        color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #ff6f61; /* Vibrant hover color */
+      }
+
+      .logo {
+        color: #ff6f61; /* Match hover color for logo */
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.2rem; /* Slightly larger font for prominence */
+        transition: color 0.3s ease;
+      }
+
+      /* Main Content Styles */
+      .main-content {
+        padding: 20px;
+      }
+
+      .hero {
+        background: linear-gradient(180deg, #b91202af 0%, #004b8d 100%);
+        background-size: cover;
+        color: #fff;
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      .tax-form {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .tax-form label {
+        font-size: 1.2em;
+        margin-right: 10px;
+      }
+
+      .tax-form input[type="text"] {
+        padding: 8px;
+        font-size: 1em;
+      }
+
+      .tax-form button {
+        padding: 8px 20px;
+        background-color: #ff6f61;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+      }
+
+      .tax-form button:hover {
+        background-color: #45a049;
+        transition: background-color 0.3s ease;
+      }
+
+      .additional-content {
+        background-color: #fff;
+        padding: 40px;
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .column {
+        width: 48%;
+        margin-bottom: 20px;
+      }
+
+      .column h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+      }
+
+      .column p {
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+
+      .column ul {
+        margin-top: 10px;
+      }
+
+      .column ul li {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+      }
+
+      .column ul li a {
+        text-decoration: none;
+        color: #4caf50;
+      }
+
+      .column ul li a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        background-color: #004b8d;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 14px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-section {
+        flex: 1 1 300px;
+        margin-bottom: 20px;
+      }
+
+      .footer-section h3 {
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .footer-section p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .footer-section ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+        color: #fff;
+      }
+
+      .footer-section.social {
+        text-align: center;
+      }
+
+      .footer-section.social a {
+        color: #ccc;
+        font-size: 20px;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+
+      .footer-section.social a:hover {
+        color: #fff;
+      }
+
+      .footer-bottom {
+        margin-top: 20px;
+      }
+
+      .footer-bottom p {
+        font-size: 12px;
+        color: #999;
+      }
+      .tax {
+        margin-top: 0.3rem;
+      }
+      .copy {
+        background: rgba(0, 8, 23, 0.863);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="taxstatus.html">Check Tax Status</a></li> -->
+            <li><a href="tccapplication.html">Apply for TCC</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="payment.html">Make a Payment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="hero">
+        <div class="container">
+          <h1>Check Your Tax Status</h1>
+          <form action="/api/check-tax-status" method="post" class="tax-form">
+            <label class="tax" for="tin">Tax Identification Number (TIN):</label
+            ><br />
+            <input type="text" id="tin" name="tin" required /><br />
+            <button type="submit">Check Status</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="additional-content container">
+        <div class="column">
+          <h2>Why Check Your Tax Status?</h2>
+          <p>
+            Regularly checking your tax status is crucial for several reasons:
+          </p>
+          <ul>
+            <li>
+              Ensure compliance with tax regulations to avoid legal issues and
+              penalties.
+            </li>
+            <li>Verify your payment history and current tax liabilities.</li>
+            <li>Plan effectively for upcoming tax filings and obligations.</li>
+            <li>
+              Stay informed about changes in tax laws that may affect your
+              business or personal finances.
+            </li>
+          </ul>
+          <p>
+            By staying proactive with your tax status, you can maintain
+            financial health and compliance with ease.
+          </p>
+        </div>
+        <div class="column">
+          <h2>Need Help?</h2>
+          <p>
+            Our team is dedicated to assisting you with any tax-related
+            inquiries. Explore our resources or contact our customer support for
+            personalized assistance:
+          </p>
+          <ul>
+            <li><a href="resource.html">Explore Tax Guides and Forms</a></li>
+            <li><a href="contact.html">Contact Customer Support</a></li>
+            <li>
+              Visit our <a href="faq.html">FAQs</a> for quick answers to common
+              queries.
+            </li>
+          </ul>
+          <p>
+            For urgent matters or complex issues, our support team is available
+            via phone, email, or visit our office for face-to-face assistance.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="copy">
+      <div class="footer-bottom">
+        <h4>&copy; 2024 Rwanda Tax Clearance Portal. All rights reserved.</h4>
+      </div>
+    </footer>
+  </body>
+</html>

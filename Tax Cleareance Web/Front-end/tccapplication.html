@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply for TCC - Rwanda Tax Clearance Portal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      /* Reset and General Styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #004b8d 0%, #ff6f61 100%);
+        color: #333;
+        padding-top: 60px; /* Account for fixed navbar */
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: #004b8d;
+        color: #ffffff;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links {
+        list-style-type: none;
+        display: inline-block;
+        padding: 0;
+      }
+
+      .nav-links li {
+        display: inline-block;
+        margin: 0 20px;
+      }
+
+      .nav-links a {
+        color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #ff6f61;
+      }
+
+      /* Main Content */
+      .main-content {
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .main-content h1 {
+        font-size: 2.5rem;
+        color: #004b8d;
+        margin-bottom: 20px;
+      }
+
+      .form-container {
+        background: linear-gradient(135deg, #ffffff, #e0f7fa);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .form-container h1 {
+        font-size: 2rem;
+        color: #004b8d;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .form-container p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .form-container label {
+        font-size: 1rem;
+        color: #333;
+        display: block;
+        margin: 10px 0 5px;
+      }
+
+      .form-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      .form-container button {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #ff6f61;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .form-container button:hover {
+        background-color: #ffa381;
+        transform: translateY(-2px);
+      }
+
+      /* File Upload Styling */
+      .form-container .file-upload {
+        background-color: #f5f5f5;
+        border: 2px dashed #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .form-container .file-upload input[type="file"] {
+        display: none;
+      }
+
+      .form-container .file-upload label {
+        color: #004b8d;
+        cursor: pointer;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #004b8d;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 14px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-section {
+        flex: 1 1 300px;
+        margin-bottom: 20px;
+      }
+
+      .footer-section h3 {
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .footer-section p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .footer-section ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+        color: #fff;
+      }
+
+      .footer-section.social {
+        text-align: center;
+      }
+
+      .footer-section.social a {
+        color: #ccc;
+        font-size: 20px;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+
+      .footer-section.social a:hover {
+        color: #fff;
+      }
+
+      .footer-bottom {
+        margin-top: 20px;
+      }
+
+      .footer-bottom p {
+        font-size: 12px;
+        color: #999;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav-links li {
+          margin: 10px 0;
+        }
+
+        .main-content h1 {
+          font-size: 2rem;
+        }
+
+        .form-container {
+          max-width: 90%;
+          margin: 10px auto;
+        }
+      }
+      .copy {
+        background: rgba(0, 8, 23, 0.863);
+      }
+
+      .file-upload {
+        margin-bottom: 20px;
+      }
+      .upload-done {
+        color: green;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .file-upload input[type="file"].uploaded {
+        border: 2px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="taxstatus.html">Check Tax Status</a></li> -->
+            <li><a href="tccapplication.html">Apply for TCC</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="payment.html">Make a Payment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="main-content">
+      <div class="form-container">
+        <h1>Apply for Tax Clearance Certificate (TCC)</h1>
+        <p>
+          Ensure you meet the requirements for the Tax Clearance Certificate
+          (TCC) by filling out the form below. This certificate is crucial for
+          legal compliance and various business processes.
+        </p>
+        <form
+          action="https://formspree.io/f/mwpevzob"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <label for="tin">Tax Identification Number (TIN):</label>
+          <input type="text" id="tin" name="tin" required />
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" required />
+          <label for="contact">Contact Number:</label>
+          <input type="text" id="contact" name="contact" required />
+
+          <!-- File Upload Section -->
+          <div class="file-upload">
+            <label for="idCopy">Upload ID Copy (PDF only):</label>
+            <input
+              type="file"
+              id="idCopy"
+              name="idCopy"
+              accept=".pdf"
+              required
+            />
+            <span id="idCopyStatus" class="upload-done" style="display: none"
+              >Upload complete!</span
+            >
+          </div>
+          <div class="file-upload">
+            <label for="businessRegCopy"
+              >Upload Business Registration Copy (PDF only):</label
+            >
+            <input
+              type="file"
+              id="businessRegCopy"
+              name="businessRegCopy"
+              accept=".pdf"
+              required
+            />
+            <span
+              id="businessRegCopyStatus"
+              class="upload-done"
+              style="display: none"
+              >Upload complete!</span
+            >
+          </div>
+
+          <script>
+            document
+              .getElementById("idCopy")
+              .addEventListener("change", function () {
+                if (this.files && this.files[0]) {
+                  document.getElementById("idCopyStatus").style.display =
+                    "inline";
+                  this.classList.add("uploaded");
+                }
+              });
+
+            document
+              .getElementById("businessRegCopy")
+              .addEventListener("change", function () {
+                if (this.files && this.files[0]) {
+                  document.getElementById(
+                    "businessRegCopyStatus"
+                  ).style.display = "inline";
+                  this.classList.add("uploaded");
+                }
+              });
+          </script>
+
+          <button type="submit">Submit Application</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="copy">
+      <div class="footer-bottom">
+        <h4>&copy; 2024 Rwanda Tax Clearance Portal. All rights reserved.</h4>
+      </div>
+    </footer>
+  </body>
+</html>
